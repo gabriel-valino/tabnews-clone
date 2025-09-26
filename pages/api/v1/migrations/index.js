@@ -15,9 +15,9 @@ export default async function migrations(request, response) {
 
   if (request.method !== "GET" && request.method !== "POST") {
     await dbClient.end();
-    response
+    return response
       .status(405)
-      .end({ message: `Method Not Allowed: ${request.method}` });
+      .json({ message: `Method Not Allowed: ${request.method}` });
   }
 
   if (request.method === "GET") {
@@ -40,5 +40,5 @@ export default async function migrations(request, response) {
     }
   }
 
-  return response.status(405).end();
+  return response.status(405).json({ message: "Method Not Allowed" });
 }
