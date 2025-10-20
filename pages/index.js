@@ -3,3 +3,5 @@ function Home() {
 }
 
 export default Home;
+
+const API_KEY = "sad12315onad435@54dds668905332@uaifysoapoasi";
