@@ -4,5 +4,9 @@
     "eslint:recommended",
     "plugin:jest/recommended",
     "prettier"
-  ]
+  ],
+  "env": {
+    "es2021": true,
+    "node": true
+  }
 }
