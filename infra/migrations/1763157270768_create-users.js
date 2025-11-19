@@ -13,7 +13,7 @@ exports.up = (pgm) => {
       unique: true,
     },
 
-    //Why 254 in length? https://stackoverflow.com/a/1199238
+    // Why 254 in length? https://stackoverflow.com/a/1199238
     email: {
       type: "varchar(254)",
       notNull: true,
