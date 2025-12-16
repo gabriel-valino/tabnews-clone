@@ -1,6 +1,6 @@
 import orchestrator from "tests/orchestrator.js";
 import { version as uuidVersion } from "uuid";
-import session from "models/sessions.js";
+import session from "models/session.js";
 import setCookieParsers from "set-cookie-parser";
 
 beforeAll(async () => {
@@ -137,8 +137,6 @@ describe("POST /api/v1/session", () => {
       const parsedSetCookie = setCookieParsers(response, {
         map: true,
       });
-
-      console.log(parsedSetCookie);
 
       expect(parsedSetCookie.session_id).toEqual({
         name: "session_id",
