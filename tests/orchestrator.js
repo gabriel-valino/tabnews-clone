@@ -9,13 +9,9 @@ import session from "models/session";
 const emailHttpUrl = `http://${process.env.EMAIL_HTTP_HOST}:${process.env.EMAIL_HTTP_PORT}`;
 
 async function waitForAllServices() {
-  console.log("Waiting for web server...");
   await waitForWebServer();
 
-  console.log("Waiting for email server...");
   await waitForEmailServer();
-
-  console.log("All services ready!");
 
   async function waitForWebServer() {
     return retry(fetchStatusPage, {
