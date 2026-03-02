@@ -68,7 +68,7 @@ describe("Patch /api/v1/users/[username]", () => {
       });
     });
 
-    test("With dupicated 'username'", async () => {
+    test("With duplicated 'username'", async () => {
       await orchestrator.createUser({
         username: "userA",
       });
@@ -143,7 +143,7 @@ describe("Patch /api/v1/users/[username]", () => {
       });
     });
 
-    test("With dupicated 'email'", async () => {
+    test("With duplicated 'email'", async () => {
       await orchestrator.createUser({
         email: "email1@curso.dev",
       });
@@ -233,9 +233,7 @@ describe("Patch /api/v1/users/[username]", () => {
       expect(responseBody).toEqual({
         id: responseBody.id,
         username: "validUsername",
-        email: createdUser.email,
         features: ["create:session", "read:session", "update:user"],
-        password: responseBody.password,
         created_at: responseBody.created_at,
         updated_at: responseBody.updated_at,
       });
@@ -274,9 +272,7 @@ describe("Patch /api/v1/users/[username]", () => {
       expect(responseBody).toEqual({
         id: responseBody.id,
         username: createdUser.username,
-        email: "uniqueemail@curso.dev",
         features: ["create:session", "read:session", "update:user"],
-        password: responseBody.password,
         created_at: responseBody.created_at,
         updated_at: responseBody.updated_at,
       });
@@ -317,9 +313,7 @@ describe("Patch /api/v1/users/[username]", () => {
       expect(responseBody).toEqual({
         id: responseBody.id,
         username: createdUser.username,
-        email: createdUser.email,
         features: ["create:session", "read:session", "update:user"],
-        password: responseBody.password,
         created_at: responseBody.created_at,
         updated_at: responseBody.updated_at,
       });
@@ -384,9 +378,7 @@ describe("Patch /api/v1/users/[username]", () => {
       expect(responseBody).toEqual({
         id: defaultUser.id,
         username: "AlteradoPorPrivilegiado",
-        email: defaultUser.email,
         features: defaultUser.features,
-        password: responseBody.password,
         created_at: responseBody.created_at,
         updated_at: responseBody.updated_at,
       });
