@@ -72,5 +72,8 @@
     "*.{json,env,txt,md}": [
       "secretlint"
     ]
+  },
+  "engines": {
+    "node": "24"
   }
 }
