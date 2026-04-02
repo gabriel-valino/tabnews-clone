@@ -7,6 +7,7 @@ beforeAll(async () => {
   await orchestrator.waitForAllServices();
   await orchestrator.clearDatabase();
   await orchestrator.runPendingMigrations();
+  await orchestrator.deleteAllEmails();
 });
 
 describe("POST /api/v1/session", () => {
@@ -96,6 +97,8 @@ describe("POST /api/v1/session", () => {
         email: "tudo.correto@curso.dev",
         password: "tudocorreto",
       });
+
+      await orchestrator.activateUser(createdUser);
 
       const response = await fetch("http://localhost:3000/api/v1/sessions", {
         method: "POST",
