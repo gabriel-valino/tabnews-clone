@@ -54,7 +54,7 @@ describe("POST /api/v1/users", () => {
       expect(incorrectPasswordMatch).toBe(false);
     });
 
-    test("With dupicated 'email'", async () => {
+    test("With dupicated `email`", async () => {
       const response1 = await fetch("http://localhost:3000/api/v1/users", {
         method: "POST",
         headers: {
@@ -93,7 +93,7 @@ describe("POST /api/v1/users", () => {
       });
     });
 
-    test("With dupicated 'username'", async () => {
+    test("With dupicated `username`", async () => {
       const response1 = await fetch("http://localhost:3000/api/v1/users", {
         method: "POST",
         headers: {
