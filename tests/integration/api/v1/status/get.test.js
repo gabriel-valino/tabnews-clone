@@ -35,9 +35,7 @@ describe("GET /api/v1/status", () => {
 
       const activatedUser = await orchestrator.activateUser(createdUser);
 
-      const userSessionObject = await orchestrator.createSession(
-        activatedUser.id,
-      );
+      const userSessionObject = await orchestrator.createSession(activatedUser);
 
       const response = await fetch(`${webserver.origin}/api/v1/status`, {
         headers: {
@@ -70,7 +68,7 @@ describe("GET /api/v1/status", () => {
       ]);
 
       const privilegedUserSessionObject = await orchestrator.createSession(
-        activatedPrivilegedUser.id,
+        activatedPrivilegedUser,
       );
 
       const response = await fetch(`${webserver.origin}/api/v1/status`, {
