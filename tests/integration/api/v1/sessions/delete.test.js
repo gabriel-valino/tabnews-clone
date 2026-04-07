@@ -113,6 +113,7 @@ describe("POST /api/v1/session", () => {
         maxAge: -1,
         path: "/",
         httpOnly: true,
+        sameSite: "Lax",
       });
 
       // Double check assertions
